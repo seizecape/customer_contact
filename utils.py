@@ -198,6 +198,48 @@ def run_customer_doc_chain(param):
     return ai_msg["answer"]
 
 
+#toolを２つ追加
+def run_product_doc_chain(param):
+    """
+    製品に関するデータ参照に特化したTool設定用の関数
+
+    Args:
+        param: ユーザー入力値
+
+    Returns:
+        LLMからの回答
+    """
+    ai_msg = st.session_state.product_doc_chain.invoke({
+        "input": param,
+        "chat_history": st.session_state.chat_history
+    })
+    st.session_state.chat_history.extend([
+        HumanMessage(content=param),
+        AIMessage(content=ai_msg["answer"])
+    ])
+    return ai_msg["answer"]
+
+def run_policy_doc_chain(param):
+    """
+    社内ポリシーに関するデータ参照に特化したTool設定用の関数
+
+    Args:
+        param: ユーザー入力値
+
+    Returns:
+        LLMからの回答
+    """
+    ai_msg = st.session_state.policy_doc_chain.invoke({
+        "input": param,
+        "chat_history": st.session_state.chat_history
+    })
+    st.session_state.chat_history.extend([
+        HumanMessage(content=param),
+        AIMessage(content=ai_msg["answer"])
+    ])
+    return ai_msg["answer"]
+
+
 def delete_old_conversation_log(result):
     """
     古い会話履歴の削除

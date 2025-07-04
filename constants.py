@@ -88,11 +88,18 @@ AI_AGENT_MAX_ITERATIONS = 5
 
 DB_SERVICE_PATH = "./.db_service"
 DB_CUSTOMER_PATH = "./.db_customer"
+#追加tool
+DB_PRODUCT_PATH = "./.db_product"
+DB_POLICY_PATH = "./.db_policy"
+
 
 DB_NAMES = {
     DB_COMPANY_PATH: f"{RAG_TOP_FOLDER_PATH}/company",
     DB_SERVICE_PATH: f"{RAG_TOP_FOLDER_PATH}/service",
-    DB_CUSTOMER_PATH: f"{RAG_TOP_FOLDER_PATH}/customer"
+    DB_CUSTOMER_PATH: f"{RAG_TOP_FOLDER_PATH}/customer",
+    #追加tool
+    DB_PRODUCT_PATH: f"{RAG_TOP_FOLDER_PATH}/product",
+    DB_POLICY_PATH: f"{RAG_TOP_FOLDER_PATH}/policy"
 }
 
 AI_AGENT_MODE_ON = "利用する"
@@ -106,7 +113,12 @@ SEARCH_CUSTOMER_COMMUNICATION_INFO_TOOL_NAME = "search_customer_communication_to
 SEARCH_CUSTOMER_COMMUNICATION_INFO_TOOL_DESCRIPTION = "顧客とのやりとりに関する情報を参照したい時に使う"
 SEARCH_WEB_INFO_TOOL_NAME = "search_web_tool"
 SEARCH_WEB_INFO_TOOL_DESCRIPTION = "自社サービス「HealthX」に関する質問で、Web検索が必要と判断した場合に使う"
-
+#追加tool
+SEARCH_PRODUCT_INFO_TOOL_NAME = "search_product_tool"
+SEARCH_PRODUCT_INFO_TOOL_DESCRIPTION = "自社サービス「HealthX」に関する質問で、商品ドキュメントが必要と判断した場合に使う"
+#追加tool
+SEARCH_POLICY_INFO_TOOL_NAME = "search_policy_tool"
+SEARCH_POLICY_INFO_TOOL_DESCRIPTION = "自社の社内規程に関する質問で、社内規程の検索が必要と判断した場合に使う"
 
 # ==========================================
 # プロンプトテンプレート
